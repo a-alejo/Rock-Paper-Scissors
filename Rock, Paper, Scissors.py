@@ -2,7 +2,9 @@ import random
 
 
 def play():
-    user = input("Choose 'r' for rock, 'p' for paper, 's' for scissors ")
+    user = input("Choose 'r' for rock, 'p' for paper, 's' for scissors ").lower()
+    while user not in ['r', 'p', 's']:
+        user = input('Invalid input. Choose a valid choice ')
     computer = random.choice(['r', 'p', 's'])
     if user == computer:
         return "It's a Tie!"
